@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="colorPrimary">#667EEA</color>
+    <color name="colorPrimaryDark">#5A67D8</color>
+    <color name="colorPrimaryLight">#E6F2FF</color>
+    <color name="colorAccent">#F093FB</color>
+    
+    <!-- Secondary Colors -->
+    <color name="colorSecondary">#764BA2</color>
+    <color name="colorSecondaryDark">#6A4190</color>
+    <color name="colorSecondaryLight">#F5E6FF</color>
+    
+    <!-- Status Colors -->
+    <color name="success">#48BB78</color>
+    <color name="warning">#ED8936</color>
+    <color name="error">#F56565</color>
+    <color name="info">#4299E1</color>
+    
+    <!-- Neutral Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray_light">#F7FAFC</color>
+    <color name="gray_medium">#A0AEC0</color>
+    <color name="gray_dark">#4A5568</color>
+    <color name="gray_darker">#2D3748</color>
+    
+    <!-- Background Colors -->
+    <color name="background_light">#F7FAFC</color>
+    <color name="background_dark">#1A202C</color>
+    <color name="background_card">#FFFFFF</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#2D3748</color>
+    <color name="text_secondary">#718096</color>
+    <color name="text_light">#A0AEC0</color>
+    <color name="text_dark">#1A202C</color>
+    
+    <!-- Button Colors -->
+    <color name="button_primary">#667EEA</color>
+    <color name="button_secondary">#764BA2</color>
+    <color name="button_success">#48BB78</color>
+    <color name="button_danger">#F56565</color>
+    
+    <!-- Badge Colors -->
+    <color name="badge_background">#F56565</color>
+    <color name="badge_text">#FFFFFF</color>
+    
+    <!-- Ripple Colors -->
+    <color name="ripple_light">#1F000000</color>
+    <color name="ripple_dark">#1FFFFFFF</color>
+    
+    <!-- Shadow Colors -->
+    <color name="shadow_light">#10000000</color>
+    <color name="shadow_medium">#20000000</color>
+    <color name="shadow_dark">#30000000</color>
+    
+    <!-- Gradient Colors -->
+    <color name="gradient_start">#667EEA</color>
+    <color name="gradient_end">#764BA2</color>
+    <color name="gradient_secondary_start">#F093FB</color>
+    <color name="gradient_secondary_end">#F5576C</color>
+    
+    <!-- Notification Colors -->
+    <color name="notification_background">#667EEA</color>
+    <color name="notification_text">#FFFFFF</color>
+    
+    <!-- Credit Colors -->
+    <color name="credit_positive">#48BB78</color>
+    <color name="credit_negative">#F56565</color>
+    <color name="credit_neutral">#4299E1</color>
+    
+    <!-- Location Colors -->
+    <color name="location_in_radius">#48BB78</color>
+    <color name="location_out_radius">#ED8936</color>
+    <color name="location_tracking">#4299E1</color>
+    
+    <!-- Store Status Colors -->
+    <color name="store_open">#48BB78</color>
+    <color name="store_closed">#F56565</color>
+    
+    <!-- Ad Category Colors -->
+    <color name="category_retail">#667EEA</color>
+    <color name="category_food">#ED8936</color>
+    <color name="category_entertainment">#F093FB</color>
+    <color name="category_services">#48BB78</color>
+    <color name="category_technology">#4299E1</color>
+    <color name="category_other">#A0AEC0</color>
+    
+    <!-- Dark Theme Colors -->
+    <color name="dark_primary">#667EEA</color>
+    <color name="dark_primary_variant">#5A67D8</color>
+    <color name="dark_secondary">#F093FB</color>
+    <color name="dark_background">#1A202C</color>
+    <color name="dark_surface">#2D3748</color>
+    <color name="dark_text_primary">#F7FAFC</color>
+    <color name="dark_text_secondary">#A0AEC0</color>
+    
+</resources>

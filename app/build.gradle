@@ -1,45 +1,126 @@
 plugins {
     id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
-    namespace 'com.example.adsbubble'
+    namespace 'com.adx.integration'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.adsbubble"
-        minSdk 25
+        applicationId "com.adx.integration"
+        minSdk 24
         targetSdk 34
         versionCode 1
         versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        
+        // API Configuration
+        buildConfigField "String", "API_BASE_URL", "&quot;https://adx3.me/api/&quot;"
+        buildConfigField "String", "GITHUB_CLIENT_ID", "&quot;your-github-client-id&quot;"
+        buildConfigField "String", "STRIPE_PUBLISHABLE_KEY", "&quot;your-stripe-publishable-key&quot;"
+        buildConfigField "String", "GOOGLE_PAY_GATEWAY", "&quot;stripe&quot;"
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
+    
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    
+    buildFeatures {
+        viewBinding true
+        dataBinding true
     }
 }
 
 dependencies {
-    // AndroidX
-    implementation "androidx.core:core-ktx:1.12.0"
-    implementation "androidx.appcompat:appcompat:1.7.0"
-    implementation "androidx.activity:activity-ktx:1.8.0"
-    implementation "androidx.fragment:fragment-ktx:1.6.0"
-
-    // Material Design
-    implementation "com.google.android.material:material:1.9.0"
-
-    // Apache Commons IO for FileUtils
-    implementation "commons-io:commons-io:2.11.0"
-
-    // Dagger Hilt — only if you want DI
-    implementation "com.google.dagger:hilt-android:2.49"
+    // Android Core
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    
+    // Lifecycle & ViewModel
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
+    
+    // Navigation
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.6'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.6'
+    
+    // Retrofit & Networking
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    
+    // Room Database
+    implementation 'androidx.room:room-runtime:2.6.1'
+    implementation 'androidx.room:room-ktx:2.6.1'
+    kapt 'androidx.room:room-compiler:2.6.1'
+    
+    // Dependency Injection
+    implementation 'com.google.dagger:hilt-android:2.48'
+    kapt 'com.google.dagger:hilt-compiler:2.48'
+    
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3'
+    
+    // Location Services
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'com.google.android.gms:play-services-maps:18.2.0'
+    
+    // Google Pay
+    implementation 'com.google.android.gms:play-services-wallet:19.2.1'
+    implementation 'com.google.android.gms:play-services-pay:16.1.0'
+    
+    // Stripe
+    implementation 'com.stripe:stripe-android:20.36.0'
+    
+    // Image Loading
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    kapt 'com.github.bumptech.glide:compiler:4.16.0'
+    
+    // Video Player
+    implementation 'com.google.android.exoplayer:exoplayer:2.19.1'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.19.1'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.19.1'
+    
+    // Work Manager for Background Tasks
+    implementation 'androidx.work:work-runtime-ktx:2.9.0'
+    
+    // DataStore for Preferences
+    implementation 'androidx.datastore:datastore-preferences:1.0.0'
+    
+    // Security
+    implementation 'androidx.security:security-crypto:1.1.0-alpha06'
+    
+    // Testing
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'androidx.arch.core:core-testing:2.2.0'
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3'
+    testImplementation 'com.google.truth:truth:1.1.5'
+    testImplementation 'io.mockk:mockk:1.13.8'
+    
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.5.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.5.1'
 }
